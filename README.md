@@ -1,14 +1,22 @@
 # project-stack1
 Starter Projekt für Tailwindcss
 
-# Software
+## Software
 
 ---
 
 ### Tools
 
 - Gulp (Software, basierend auf Node.js, um verschiedene Aufgaben im Webentwicklungsprozess zu automatisieren)
-[https://gulpjs.com/](https://gulpjs.com/) (Gulp-Pakete: gulp, browser-sync, gulp-postcss, gulp-sass, postcss-import, gulp-purgecss, tailwindcss)
+[https://gulpjs.com/](https://gulpjs.com/)
+ * Gulp-Pakete: 
+ * gulp 
+ * browser-sync
+ * gulp-postcss
+ * gulp-sass
+ * postcss-import
+ * gulp-purgecss
+ * tailwindcss
 - Tailwind (A utility-first CSS framework for rapidly building custom designs.)
 [https://tailwindcss.com/](https://tailwindcss.com/)
 
@@ -37,23 +45,30 @@ Um Gulp für ein Projekt nutzen zu könne, muss die Gulp-CLI einmalig global ins
 
 Bei der Einbindung einer **Gulp-Projektvorlage** (mit **package.json, gulpfile.js** und **ohne node_modules**) wird die Installation von allen benötigten Modulen einfach mit "npm install" ausgeführt. 
 
-### 1.1.  Download Gulp Projekt
+### 1.1.  Projekt anlegen
 
-[**Jetzt Gulp-Projekt downloaden**](https://www.dropbox.com/s/4l2p6zugwv9e383/project-stack1.zip?dl=0)
+Projekt in den Web-Root clonen.
 
-### 1.2.  Projekt anlegen
+    $ cd websites/
+    $ git clone https://github.com/github_Account/project-stack1.git
 
-Gulp-Projekt-Zip extrahieren und in die Web-Root kopieren, z.B. "/websites/project-stack1". Projekt-Verzeichnis-Namen anpassen und in das Verzeichnis wechseln.
+Projekt-Verzeichnis-Namen anpassen. 
 
-    $ cd websites/project-stack1
 
- 
+### 1.2. Projekt mit TLS schützen (https)
+    $ cd project-stack1/
+    $ valet secure
 
-### 1.3.  Projekt-Namen anpassen
+### 1.3.  Projekt anpassen
+
+Anstelle von project-stack1 in src den Projektname des neuen Projekts
 
 /index.html
 
     <script async="" src="http://project-stack1.test:3000/browser-sync/browser-sync-client.js"></script>
+
+    
+Anstelle von project-stack1 in proxy, key und cert den Projektname des neuen Projekts
 
 /gulpfile.js
 
@@ -62,8 +77,8 @@ Gulp-Projekt-Zip extrahieren und in die Web-Root kopieren, z.B. "/websites/proje
     browserSync.init({
             proxy: "https://project-stack1.test",
             https: {
-                key: "/Users/marco/.config/valet/Certificates/project-stack1.test.key", 
-                cert: "/Users/marco/.config/valet/Certificates/project-stack1.test.crt"
+                key: "/Users/username/.config/valet/Certificates/project-stack1.test.key", 
+                cert: "/Users/username/.config/valet/Certificates/project-stack1.test.crt"
             },
            browser: "chrome",
            notify: true,
