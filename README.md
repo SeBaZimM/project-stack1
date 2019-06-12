@@ -1,4 +1,4 @@
-# project-stack1
+# Project-Stack1
 Starter Projekt für Tailwindcss
 
 ## Software
@@ -10,13 +10,13 @@ Starter Projekt für Tailwindcss
 - Gulp (Software, basierend auf Node.js, um verschiedene Aufgaben im Webentwicklungsprozess zu automatisieren)
 [https://gulpjs.com/](https://gulpjs.com/)
  * Gulp-Pakete: 
- * gulp 
- * browser-sync
- * gulp-postcss
- * gulp-sass
- * postcss-import
- * gulp-purgecss
- * tailwindcss
+  * gulp 
+  * browser-sync
+  * gulp-postcss
+  * gulp-sass
+  * postcss-import
+  * gulp-purgecss
+  * tailwindcss
 - Tailwind (A utility-first CSS framework for rapidly building custom designs.)
 [https://tailwindcss.com/](https://tailwindcss.com/)
 
@@ -47,25 +47,23 @@ Bei der Einbindung einer **Gulp-Projektvorlage** (mit **package.json, gulpfile.j
 
 ### 1.1.  Projekt anlegen
 
-Projekt in den Web-Root clonen.
+Falls das Projekt spezifisch mit einem neuen Projekt Namen geklont wurde, braucht man den Projekt-Verzeichnis-Name nicht ändern.
+    "git clone https://github.com/Account/repo 'my-project'"
 
-    $ cd websites/
-    $ git clone https://github.com/github_Account/project-stack1.git
-
-Projekt-Verzeichnis-Namen anpassen. 
+Ansonsten beim klonen des Projekts mittels "git clone https://github.com/Account/repo" wird der Projekt-Verzeichnis-Namen dementsprechend angepasst. 
 
 
 ### 1.2. Projekt mit TLS schützen (https)
-    $ cd project-stack1/
+    $ cd my-project/
     $ valet secure
 
 ### 1.3.  Projekt anpassen
 
-Anstelle von project-stack1 in src den Projektname des neuen Projekts
+Anstelle von project-stack1 in src den Projektname des neuen Projekts (my-project)
 
 /index.html
 
-    <script async="" src="http://project-stack1.test:3000/browser-sync/browser-sync-client.js"></script>
+    <script async="" src="http://my-project.test:3000/browser-sync/browser-sync-client.js"></script>
 
     
 Anstelle von project-stack1 in proxy, key und cert den Projektname des neuen Projekts
@@ -75,10 +73,10 @@ Anstelle von project-stack1 in proxy, key und cert den Projektname des neuen Pro
     // aktuelle proxy-url eintragen und falls die Test-Seite über https läuft den key und cert pfad anpassen
     
     browserSync.init({
-            proxy: "https://project-stack1.test",
+            proxy: "https://my-project.test",
             https: {
-                key: "/Users/username/.config/valet/Certificates/project-stack1.test.key", 
-                cert: "/Users/username/.config/valet/Certificates/project-stack1.test.crt"
+                key: "/Users/username/.config/valet/Certificates/my-project.test.key", 
+                cert: "/Users/username/.config/valet/Certificates/my-project.test.crt"
             },
            browser: "chrome",
            notify: true,
@@ -105,6 +103,8 @@ Im Projekt-Root-Verzeichnis die Überwachung mit "$ gulp watch" starten:
 PurgeCSS entfernt überflüssige Klassen aus  "/css/tailwind.css" und reduziert dadurch extrem die Größe des CSS-Files. Diese Funktion sollte man ausführen, bevor die Seite live geht.
 
     $ gulp purgecss
+
+---
 
 ## 2. Installation Project Stack 1 from scratch
 
