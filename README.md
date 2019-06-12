@@ -277,8 +277,8 @@ Pakete: gulp - autoprefixer, browser-sync, gulp-postcss, gulp-sass, postcss-impo
         browserSync.init({
             proxy: "https://project-stack1.test",
             https: {
-                key: "/Users/marco/.config/valet/Certificates/project-stack1.test.key", 
-                cert: "/Users/marco/.config/valet/Certificates/project-stack1.test.crt"
+                key: "/Users/username/.config/valet/Certificates/project-stack1.test.key", 
+                cert: "/Users/username/.config/valet/Certificates/project-stack1.test.crt"
             },
            browser: "chrome",
            notify: true,
