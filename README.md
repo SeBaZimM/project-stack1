@@ -9,7 +9,7 @@ Starter Projekt für Tailwindcss
 
 - Gulp (Software, basierend auf Node.js, um verschiedene Aufgaben im Webentwicklungsprozess zu automatisieren)
 [https://gulpjs.com/](https://gulpjs.com/)
- * Gulp-Pakete: 
+  - Gulp-Pakete: 
   * gulp 
   * browser-sync
   * gulp-postcss
