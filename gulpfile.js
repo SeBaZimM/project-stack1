@@ -36,7 +36,8 @@ var path = {
             twcss: "./twcss/*.css",
             twjs: "./tailwind.config.js",
             html: "./**/*.html"
-        }  
+        },
+        dest: "./_dest"
     };
 
 
@@ -114,7 +115,7 @@ gulp.task('build', () => {
             .src('./css/tailwind.css')
             .pipe(csso())
             .pipe(rename("./css/tailwind.min.css"))
-            .pipe(gulp.dest('./'))
+            .pipe(gulp.dest(path.dest))
         ,
 
         // Minify styles CSS
@@ -122,7 +123,7 @@ gulp.task('build', () => {
             .src('./css/styles.css')
             .pipe(csso())
             .pipe(rename("./css/styles.min.css"))
-            .pipe(gulp.dest('./'))
+            .pipe(gulp.dest(path.dest))
         ,
 
         // Minify app JS
@@ -130,7 +131,7 @@ gulp.task('build', () => {
             .src('./js/app.js')
             .pipe(terser({ mangle: true, ecma: 6 }))
             .pipe(rename("./js/app.min.js"))
-            .pipe(gulp.dest('./'))
+            .pipe(gulp.dest(path.dest))
         ,
 
         // Replace import CSS to min.css
@@ -138,23 +139,16 @@ gulp.task('build', () => {
             .src('./css/app.css')
             .pipe(replace('tailwind.css', 'tailwind.min.css'))
             .pipe(replace('styles.css', 'styles.min.css'))
-            .pipe(gulp.dest('./css'))
+            .pipe(gulp.dest(path.dest + '/css'))
         ,
 
         // Replace script src JS to app.min.js
         gulp
             .src('./*.html')
             .pipe(replace('/js/app.js', '/js/app.min.js'))
-            .pipe(gulp.dest('./'))
+            .pipe(gulp.dest(path.dest))
     )
 });
-
-
-
-// Replace the reference in app.css and *.html files
-// -------------------------------------------------------
-
-
 
 
 // Watch
@@ -165,10 +159,10 @@ function watch(){
     // Achtung: Browser Cache in Chrome sollte in Dev deaktiviert werden, damit CSS nicht aus dem Cache geladen wird
     // Möglichkeiten: Erweiterung Cache Killer bzw. gulp-cache (noch nichgt getestet) einbinden
     browserSync.init({
-        proxy: "https://my-project.test",
+        proxy: "https://project-stack1.test",
         https: {
-            key: "/Users/sebastianzimmermann/.config/valet/Certificates/my-project.test.key", 
-            cert: "/Users/sebastianzimmermann/.config/valet/Certificates/my-project.test.crt"
+            key: "/Users/username/.config/valet/Certificates/project-stack1.test.key", 
+            cert: "/Users/username/.config/valet/Certificates/project-stack1.test.crt"
         },
        browser: "chrome",
        notify: true,

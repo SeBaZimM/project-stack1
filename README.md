@@ -58,9 +58,9 @@ Alle Pakete werden ****in das Verzeichnis **"node_modules"** installiert.
 ### 1.1.  Projekt Name anpassen
 
 Falls das Projekt spezifisch mit einem neuen Projekt Namen geklont wurde, braucht man den Projekt-Verzeichnis-Name nicht ändern.
-    "git clone https://github.com/Account/repo 'my-project'"
+    "git clone git@github.com:'github_account'/repo.git 'my-project'"
 
-Ansonsten beim klonen des Projekts mittels "git clone https://github.com/Account/repo" wird der Projekt-Verzeichnis-Namen dementsprechend angepasst. 
+Ansonsten beim klonen des Projekts mittels "git clone git@github.com:'github_account'/repo.git" wird der Projekt-Verzeichnis-Namen dementsprechend angepasst. 
 
 
 ### 1.2. Projekt mit TLS schützen (https)
@@ -99,6 +99,29 @@ Wenn das Projekt mit valet TSL geschützt wurde, dann das Protokoll demenspreche
 Im Projekt-Root-Verzeichnis die Überwachung mit "$ gulp watch" starten:
 
     $ gulp watch
+
+#### Hinweis
+
+Beim erstenmal Aufrufen der Seite im Browser ist kein CSS import vorhanden. 
+
+    /css
+    |- app.css
+
+Erst bei einer Änderung in der tailwind-custom.css oder styles.css werden die benötigten **/css/tailwind.css** und **/css/styles.css** erstellt.
+
+    /css
+    |- app.css
+    |- styles.css
+    |- tailwind.css
+
+##### Alternativ kann man die auch mit Gulp erstellen lassen:
+
+    $ gulp tailwind
+    $ gulp style
+
+oder beide auf einmal:
+
+    $ gulp tailwind && gulp style
 
 # Live Produktion
 
