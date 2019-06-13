@@ -1,9 +1,6 @@
 # Project-Stack1
 **Starter Projekt für Tailwindcss**
 
-TEST
-new branch
-
 ## Software
 
 ---
