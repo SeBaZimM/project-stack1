@@ -21,6 +21,7 @@
   * gulp-replace
   * tailwindcss
   * browser-sync
+  * dotenv
 - Tailwind (A utility-first CSS framework for rapidly building custom designs.)
 [https://tailwindcss.com/](https://tailwindcss.com/)
 
@@ -53,7 +54,7 @@ Bei der Einbindung einer **Gulp-Projektvorlage** (mit **package.json, gulpfile.j
 
     $ npm install
 
-Alle Pakete werden ****in das Verzeichnis **"node_modules"** installiert.
+Alle Pakete werden **in das Verzeichnis "node_modules"** installiert.
 
 ### 1.1.  Projekt Name anpassen
 
@@ -67,7 +68,16 @@ Ansonsten beim klonen des Projekts mittels "git clone git@github.com:'github_acc
     $ cd my-project/
     $ valet secure
 
-### 1.3. index.html und gulpfile.js anpassen
+### 1.3. Enviroment Variablen Erstellen
+
+Wenn mehrere Entwickler am Projekt arbeiten, wird das mit der Zeit lästig immer die gulpfile.js (ö.ä) anzupassen. Hierbei hilft uns es sher einmalig für das Projekt eine .env Datei zu erstellen, die unstere Umgebungsvariablen, wie username bereitstellt.
+
+/.env
+
+    username="dein mac username"
+    project_name="der Projektname"
+
+### 1.4. index.html anpassen
 
 Anstelle von project-stack1 in src den Projektname des neuen Projekts (my-project)
 Wenn das Projekt mit valet TSL geschützt wurde, dann das Protokoll demensprechend auch anpassen: http -> https
@@ -77,24 +87,7 @@ Wenn das Projekt mit valet TSL geschützt wurde, dann das Protokoll demenspreche
     <script async="" src="http://my-project.test:3000/browser-sync/browser-sync-client.js"></script>
 
 
-/gulpfile.js
-
-    // aktuelle proxy-url eintragen und falls die Test-Seite über https läuft den key und cert pfad und den username anpassen
-    
-    browserSync.init({
-            proxy: "https://my-project.test",
-            https: {
-                key: "/Users/username/.config/valet/Certificates/my-project.test.key", 
-                cert: "/Users/username/.config/valet/Certificates/my-project.test.crt"
-            },
-           browser: "chrome",
-           notify: true,
-           open: false,
-           port:3000
-        });
-
-
-### 1.4. Überwachung starten
+### 1.5. Überwachung starten
 
 Im Projekt-Root-Verzeichnis die Überwachung mit "$ gulp watch" starten:
 

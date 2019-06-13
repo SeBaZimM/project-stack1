@@ -15,6 +15,7 @@ var terser          = require('gulp-terser');
 var replace         = require("gulp-replace");
 var tailwindcss     = require("tailwindcss");
 var browserSync     = require("browser-sync").create();
+var dotenv          = require('dotenv').config().parsed;
 
 
 // Variables
@@ -151,6 +152,11 @@ gulp.task('build', () => {
 });
 
 
+gulp.task('test', () => {
+console.log(dotenv.username)
+})
+
+
 // Watch
 // -------------------------------------------------------
 
@@ -159,10 +165,10 @@ function watch(){
     // Achtung: Browser Cache in Chrome sollte in Dev deaktiviert werden, damit CSS nicht aus dem Cache geladen wird
     // Möglichkeiten: Erweiterung Cache Killer bzw. gulp-cache (noch nichgt getestet) einbinden
     browserSync.init({
-        proxy: "https://project-stack1.test",
+        proxy: `https://${dotenv.project_name}.test`,
         https: {
-            key: "/Users/username/.config/valet/Certificates/project-stack1.test.key", 
-            cert: "/Users/username/.config/valet/Certificates/project-stack1.test.crt"
+            key: `/Users/${dotenv.username}/.config/valet/Certificates/${dotenv.project_name}.test.key`, 
+            cert: `/Users/${dotenv.username}/.config/valet/Certificates/${dotenv.project_name}.test.crt`
         },
        browser: "chrome",
        notify: true,
