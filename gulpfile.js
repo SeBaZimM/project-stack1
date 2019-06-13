@@ -93,68 +93,115 @@ exports.style = style;
 // PURGECSS
 // -------------------------------------------------------
 
-gulp.task('purgecss', () => {
-    return gulp
-      .src(path.watch.css)
-      .pipe(
-        purgecss({
-          content: [path.watch.html]
-        })
-      )
-      .pipe(gulp.dest(path.styles.dest))
-    }
-);
+function purge() {
+    return (
+        gulp
+            .src(path.watch.css)
+            .pipe(
+                purgecss({
+                content: [path.watch.html]
+                })
+            )
+            .pipe(gulp.dest(path.styles.dest))
+    )
+}
+
+exports.purge = purge;
 
 
-// Build process for live production
+// Minify tailwind CSS
 // -------------------------------------------------------
 
-gulp.task('build', () => {
-    return ( 
+function mintailwind() {
+    return(
         // Minify tailwind CSS
         gulp
             .src('./css/tailwind.css')
             .pipe(csso())
             .pipe(rename("./css/tailwind.min.css"))
             .pipe(gulp.dest(path.dest))
-        ,
+    )
+}
+exports.mintailwind = mintailwind;
 
-        // Minify styles CSS
+
+// Minify styles CSS
+// -------------------------------------------------------
+
+function minstyles() {
+    return(
         gulp
             .src('./css/styles.css')
             .pipe(csso())
             .pipe(rename("./css/styles.min.css"))
             .pipe(gulp.dest(path.dest))
-        ,
+    )
+}
+exports.minstyles = minstyles;
 
-        // Minify app JS
+
+// Minify JS
+// -------------------------------------------------------
+
+function minjs() {
+    return(
         gulp
             .src('./js/app.js')
             .pipe(terser({ mangle: true, ecma: 6 }))
             .pipe(rename("./js/app.min.js"))
             .pipe(gulp.dest(path.dest))
-        ,
+    )
+}
+exports.minjs = minjs;
 
-        // Replace import CSS to min.css
+
+// Replace import CSS to min.css
+// -------------------------------------------------------
+
+function replacecss() {
+    return(
         gulp
             .src('./css/app.css')
             .pipe(replace('tailwind.css', 'tailwind.min.css'))
             .pipe(replace('styles.css', 'styles.min.css'))
             .pipe(gulp.dest(path.dest + '/css'))
-        ,
+    )
+}
+exports.replacecss = replacecss;
 
-        // Replace script src JS to app.min.js
+// Replace script src JS to app.min.js
+// -------------------------------------------------------
+
+function replacejs() {
+    return(
         gulp
             .src('./*.html')
             .pipe(replace('/js/app.js', '/js/app.min.js'))
             .pipe(gulp.dest(path.dest))
     )
-});
+}
+exports.replacejs = replacejs;
 
 
-gulp.task('test', () => {
-console.log(dotenv.username)
-})
+// Build process for live production
+// -------------------------------------------------------
+
+gulp.task('build', 
+        gulp.series(
+            gulp.parallel(
+                tailwind,
+                style
+            ),
+            purge,
+            gulp.parallel(
+                mintailwind,
+                minstyles,
+                minjs,
+                replacecss,
+                replacejs
+            )
+        )
+);
 
 
 // Watch
