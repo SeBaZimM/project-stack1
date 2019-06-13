@@ -1,9 +1,268 @@
-
-/* Tailwind-Test-Styles  */
-.btn-blue {
-    @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+/* ----------------------------------------
+                GLOBAL
+---------------------------------------- */
+* {
+    transition: all .3s;
 }
 
-.btn-blue:hover {
-    @apply bg-blue-700;
+.container {
+    max-width: 912px;    
 }
+
+/* ----------------------------------------
+                SPACER
+---------------------------------------- */
+.spacer {
+    margin-bottom: 40rem;
+    background-color: transparent;
+}
+
+@screen md {
+    .spacer {
+        margin-bottom: 36.25rem;
+    }
+} 
+
+/* ----------------------------------------
+                NAVIGATION
+---------------------------------------- */
+
+/* Navigation Small */
+.nav-items {
+    @apply flex;
+    @apply justify-around;
+    @apply items-center;
+    @apply font-hairline;
+    @apply text-xs;
+}
+
+.nav-link {
+    @apply pl-5;
+    @apply uppercase;
+}
+
+.nav-link a:hover {
+    @apply border-b;
+    @apply border-black;
+}
+
+@screen lg {
+    .nav-link {
+        @apply pl-12;
+    }
+}
+
+/* Navigation Full */
+.navbar {
+    top: -1000px;
+}
+.full-nav-closed {
+    top: -1000px;
+    transition: all .6s;
+}
+
+.full-nav-open {
+    top: 0;
+    transition: all .6s;
+    @apply z-10;
+}
+
+.nav-full-items {
+    @apply text-center;
+    @apply text-base;
+    @apply font-hairline;
+    @apply uppercase;
+}
+
+.nav-full-link {
+    @apply mt-6;
+}
+
+/* Menu Button */
+.menu-btn {
+    cursor: pointer;
+}
+
+.menu-btn-line-first {
+    width: 20px;
+    height: 1px;
+    background: black;
+    margin: 5px 0;
+}
+
+.menu-btn-line-second {
+    width: 20px;
+    height: 2px;
+    background: black;
+    margin: 5px 0;
+}
+
+.menu-btn-line-third {
+    width: 20px;
+    height: 3px;
+    background: black;
+    margin: 5px 0;
+}
+
+/* Close Menu Button */
+.close-menu-btn {
+    cursor: pointer;
+}
+
+.close-menu-btn-line-first {
+    width: 20px;
+    height: 2px;
+    background: white;
+    margin: 5px 0;
+    transform: rotate(-45deg) translate(5px, 5px);
+}
+
+.close-menu-btn-line-second {
+    width: 20px;
+    height: 2px;
+    background: white;
+    margin: 5px 0;
+    transform: rotate(45deg) translate(0, -10px);
+}
+
+/* ----------------------------------------
+                HEAD HEADLINER
+---------------------------------------- */
+.head-headliner {
+    @apply text-6xl;
+    @apply font-bold;
+    @apply uppercase;
+    @apply leading-none; 
+}
+
+@screen sm {
+    .head-headliner {
+        font-size: 5rem;
+    }
+} 
+
+@screen md {
+    .head-headliner {
+        width: 100%;
+    }
+}
+
+/* ----------------------------------------
+        IMAGE GRID CONTAINER
+---------------------------------------- */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "img-1 img-1 img-2 img-2""img-3 img-4 img-2 img-2";
+    grid-gap: 5px;
+    height: 40vh;
+}
+
+.img-1 {
+    grid-area: img-1;
+}
+
+.img-2 {
+    grid-area: img-2;
+}
+
+.img-3 {
+    grid-area: img-3;
+}
+
+.img-4 {
+    grid-area: img-4;
+}
+
+@screen md {
+    .grid-container {
+        height: 75vh;
+    }
+}
+
+/* ----------------------------------------
+            LOGO GRID CONTAINER
+---------------------------------------- */
+.logo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.logo-grid__item {
+    padding: 10px;
+    width: calc(33.3333% - 15px);
+    text-align: center;
+}
+
+@screen sm {
+    .logo-grid__item {
+        width: calc(25% - 15px);  
+    }
+} 
+  
+/* ----------------------------------------
+                ARTICLES
+---------------------------------------- */
+.article-hover {
+    transition: all .5s;  
+}    
+
+.article-hover:hover {
+    padding-left: 5px;
+    transition: all .5s;   
+}
+
+/* ----------------------------------------
+                FOOTER
+---------------------------------------- */
+footer {
+    z-index: -1;
+}
+
+footer:hover {
+    border: 10px solid;
+    @apply border-gray-100;
+    border-top: none;
+}
+
+/* Footer Content Box */
+.footer-content-box { 
+    @apply pb-32;
+    @apply mx-auto;
+    @apply text-center;
+    padding-top: 17rem; 
+}
+
+/* Footer Address & Links List */
+.footer-list {
+    @apply flex;
+    @apply mx-auto;
+    @apply text-xs;
+    @apply text-center;
+}
+
+.footer-list li:hover {
+    @apply opacity-100;
+}
+
+/* Footer small heading */
+@screen sm {
+    .small-heading {
+        padding-right: 15rem;
+    }
+}   
+
+@screen md {
+    .small-heading {
+        padding-right: 20rem;
+    }
+}
+
+@screen lg {
+    .small-heading {
+        padding-right: 27rem;
+    }
+}
+

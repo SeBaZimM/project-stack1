@@ -1,26 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Project Stack 1</title>
+    <title>Website</title>
 
     <!-- STYLES -->
-    <link rel="stylesheet" href="/css/app.css">
-
+    <link href="/css/app.css" rel="stylesheet">
 </head>
-<body>
-    
-    <h1 class="text-blue-500 text-6xl">Project Stack 1</h1>
 
-    <button class="btn-blue">
-        Button Click
-    </button>
+<body class="mb-10 text-lg leading-loose font-normal bg-gray-100">
 
+    <!-- HEADER -->
+    <header class="header">
+
+        <!-- Small Navigation -->
+        <nav class="container mb-16 bg-gray-100">
+            <div class="inner-container flex p-5">
+                <div class="w-2/12">
+                    <a href="#">
+                        <img src="https://via.placeholder.com/150/FF0000/FFFFFF?Text=Down.com" alt="logo"
+                            class="rounded-full w-16">
+                    </a></div>
+                <div class="flex w-10/12 justify-end">
+                    <ul class="nav-items w-9/12">
+                        <li class="nav-link"><a href="#">Case studies</a></li>
+                        <li class="nav-link"><a href="">What we do</a></li>
+                        <li class="nav-link hidden sm:inline"><a href="#">Our Story</a></li>
+                        <li class="nav-link hidden sm:inline"><a href="#">The Team</a></li>
+                        <li class="nav-link hidden sm:inline"><a href="#">Digest</a></li>
+                        <li class="nav-link"><a href="#">Contact us</a></li>
+                        <li class="nav-link menu-btn sm:hidden">
+                            <div class="menu-btn-line-first"></div>
+                            <div class="menu-btn-line-second"></div>
+                            <div class="menu-btn-line-third"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav> <!-- /Small Navigation -->
+
+        <!-- Full Navigation -->
+        <nav
+            class="container full-nav-bar full-nav-closed full-nav-open hidden fixed bg-red-500 h-full w-full text-white">
+
+            <div class="inner-container px-5 pt-16">
+                <a href="#">
+                    <img src="https://via.placeholder.com/150/FF0000/FFFFFF?Text=Down.com" alt="logo"
+                        class="rounded-full w-16 inline">
+                </a>
+                <a class="close-menu-btn float-right pt-4 font-mono">
+                    <div class="close-menu-btn-line-first"></div>
+                    <div class="close-menu-btn-line-second"></div>
+                </a>
+            </div>
+            <ul class="nav-full-items">
+                <li class="nav-full-link"><a href="#">Case studies</a></li>
+                <li class="nav-full-link"><a href="">What we do</a></li>
+                <li class="nav-full-link"><a href="#">Our Story</a></li>
+                <li class="nav-full-link"><a href="#">The Team</a></li>
+                <li class="nav-full-link"><a href="#">Digest</a></li>
+                <li class="nav-full-link"><a href="#">Contact us</a></li>
+            </ul>
+        </nav> <!-- /Full Navigation -->
+    </header> <!-- /HEADER -->
+
+
+    <!-- MAIN -->
+    <main class="bg-gray-100 mb-32">
+
+        <!-- HEAD CONTENT -->
+        <div class="container mb-32">
+            <div class="inner-container pt-16 px-5">
+
+                <!-- Headliner -->
+                <h1 class="head-headliner mb-20">Solutions by design</h1>
+
+                <!-- Content Box -->
+                <div class="flex flex-col sm:flex-row">
+
+                    <!-- Left Content -->
+                    <div class="md:w-4/12 pr-10">
+                        <p class="text-lg font-light mb-8">We build identities and experiences to elevate and empower
+                            organizations.</p>
+                    </div>
+
+                    <!-- Right Content -->
+                    <div class="ml-0 sm:ml-20 md:w-8/12">
+                        <p class="text-base font-hairline mb-4 uppercase">
+                            Helping our partners move forward through</p>
+                        <div class="text-3xl text-red-500 font-thin underline leading-snug">
+                            <p class="w-2/3">
+                                <a href="#">Discovery & Strategy</a> ,
+                                <a href="#">Branding</a> ,
+                                <a href="#">Interactive</a> ,
+                                <a href="#">Communications</a> ,
+                                <a href="#">Creative</a> ,
+                                <a href="#">Production</a> ,
+                                <a href="#">Development</a> and
+                                <a href="#">Solutions</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- /HEAD CONTENT -->
+
+        <!-- IMAGE CONTENT -->
+        <div class="container mb-32">
+
+            <!-- grid Container -->
+            <div class="grid-container mb-24">
+                <div class="grid-item group img-1 bg-cover bg-center"
+                    style="background-image:url('https://via.placeholder.com/1000x1000')">
+                    <div class="m-5 p-5 opacity-0 group-hover:opacity-75 bg-white uppercase">
+                        <p class="text-sm">Client</p>
+                        <h1 class="text-3xl md:text-5xl">Outreach</h1>
+                    </div>
+                </div>
+
+                <div class="grid-item group img-2 bg-cover bg-center"
+                    style="background-image:url('https://via.placeholder.com/1000x1000')">
+                    <div class="m-5 p-5 opacity-0 group-hover:opacity-75 bg-white uppercase">
+                        <p class="text-sm">Client</p>
+                        <h1 class="text-3xl md:text-5xl">Marketo</h1>
+                    </div>
+                </div>
+
+                <div class="grid-item group img-3 bg-cover bg-center"
+                    style="background-image:url('https://via.placeholder.com/1000x1000')">
+                    <div class="m-5 p-5 opacity-0 group-hover:opacity-75 bg-white uppercase">
+                        <p class="text-sm">Client</p>
+                        <h1 class="text-3xl md:text-5xl">Braze</h1>
+                    </div>
+                </div>
+
+                <div class="grid-item group img-4">
+                    <div class="h-full flex justify-center items-center">
+                        <a href="#" class="text-red-500 text-3xl font-serif underline">
+                            See More <span class="hidden sm:inline">Work</span>
+                        </a>
+                    </div>
+                </div>
+            </div> <!-- /grid-container -->
+        </div> <!-- /IMAGE CONTENT -->
+
+        <!-- MAIN CONTENT-->
+        <div class="container flex justify-end mb-32">
+            <div class="inner-container sm:w-11/12 px-5 md:px-0">
+
+                <!-- Headliner -->
+                <h1 class="text-3xl md:text-4xl mb-16 leading-snug text-red-500 font-semibold font-sans uppercase">
+                    Let’s build something great. Together.</h1>
+
+                <!-- Content Box -->
+                <div class="flex flex-col sm:flex-row">
+
+                    <!-- Left Content -->
+                    <div class="sm:w-1/2 md:w-2/3 md:pr-20">
+                        <p class="text-lg font-light ">
+                            We are a strategic, creative studio based out of Savannah, Georgia. Our close team of
+                            innovative professionals is passionate about partnering with good people and organizations
+                            to design exceptional custom solutions. We approach each project and design challenge with
+                            process-driven intentionality to inform the identities and experiences we create. We
+                            endeavor toward work that drives action, and generates results. Are you looking to have
+                            greater impact? We’d love to help.</p>
+                    </div>
+
+                    <!-- Right Content -->
+                    <div class="sm:w-1/2 md:w-1/3 sm:pl-20 md:pl-0">
+                        <div class="border-red-500 border-b-2 sm:border-none w-10 my-10 sm:my-0"></div>
+                        <ul class="text-3xl text-red-500 font-thin underline leading-normal">
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">Read Our Story</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- /MAIN CONTENT -->
+
+
+        <!-- VIDEO CONTENT -->
+        <div class="container mb-32 text-center">
+            <img class="inline" src="https://via.placeholder.com/1000x600">
+        </div> <!-- /VIDEO CONTENT -->
+
+
+        <!-- LAST CONTENT -->
+        <div class="container flex justify-end mb-32">
+            <div class="inner-container md:w-11/12 px-5 md:px-0">
+
+                <!-- Content Box -->
+                <div class="flex flex-col sm:flex-row-reverse">
+
+                    <!-- Left Content -->
+                    <div class="sm:w-2/3 md:w-9/12 md:pl-5 md:pr-24">
+
+                        <!-- Headliner -->
+                        <h1 class="text-4xl md:text-5xl mb-8 leading-snug text-red-500 uppercase">
+                            From the inside out.
+                        </h1>
+                        <p class="text-lg font-light ">Our team and our culture is fueled by passion: for what we do,
+                            for the people we do it for, and for the people we work alongside. Take a glimpse behind the
+                            scenes at the heart of our company and the people who make up Focus Lab.</p>
+                    </div>
+
+                    <!-- Right Content -->
+                    <div class="sm:w-1/3 md:w-3/12">
+                        <div class="border-red-500 border-b-2 sm:border-none w-10 my-10 sm:my-0"></div>
+                        <ul class="text-3xl text-red-500 font-thin underline leading-normal">
+                            <li><a href="#">Our Digest</a></li>
+                            <li><a href="#">Our Standards</a></li>
+                            <li><a href="#">Meet Our Team</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- /LAST CONTENT -->
+
+
+        <!-- LOGOS -->
+        <section class="container mb-32">
+
+            <!-- logo-grid -->
+            <div class="logo-grid">
+                <div class="logo-grid__item">
+                    <img src="https://via.placeholder.com/300x150/F1F1F1/000000/?text=LOGO" />
+                </div>
+                <div class="logo-grid__item">
+                    <img src="https://via.placeholder.com/300x150/F1F1F1/000000/?text=LOGO" />
+                </div>
+                <div class="logo-grid__item">
+                    <img src="https://via.placeholder.com/300x150/F1F1F1/000000/?text=LOGO" />
+                </div>
+                <div class="logo-grid__item">
+                    <img src="https://via.placeholder.com/300x150/F1F1F1/000000/?text=LOGO" />
+                </div>
+                <div class="logo-grid__item">
+                    <img src="https://via.placeholder.com/300x150/F1F1F1/000000/?text=LOGO" />
+                </div>
+                <div class="logo-grid__item">
+                    <img src="https://via.placeholder.com/300x150/F1F1F1/000000/?text=LOGO" />
+                </div>
+                <div class="logo-grid__item">
+                    <img src="https://via.placeholder.com/300x150/F1F1F1/000000/?text=LOGO" />
+                </div>
+                <div class="logo-grid__item">
+                    <img src="https://via.placeholder.com/300x150/F1F1F1/000000/?text=LOGO" />
+                </div>
+                <div class="logo-grid__item">
+                    <img src="https://via.placeholder.com/300x150/F1F1F1/000000/?text=LOGO" />
+                </div>
+                <div class="logo-grid__item">
+                    <img src="https://via.placeholder.com/300x150/F1F1F1/000000/?text=LOGO" />
+                </div>
+                <div class="logo-grid__item">
+                    <img src="https://via.placeholder.com/300x150/F1F1F1/000000/?text=LOGO" />
+                </div>
+                <div class="logo-grid__item">
+                    <img src="https://via.placeholder.com/300x150/F1F1F1/000000/?text=LOGO" />
+                </div>
+                <div class="logo-grid__item">
+                    <img src="https://via.placeholder.com/300x150/F1F1F1/000000/?text=LOGO" />
+                </div>
+                <div class="logo-grid__item">
+                    <img src="https://via.placeholder.com/300x150/F1F1F1/000000/?text=LOGO" />
+                </div>
+                <div class="logo-grid__item">
+                    <img src="https://via.placeholder.com/300x150/F1F1F1/000000/?text=LOGO" />
+                </div>
+                <div class="logo-grid__item">
+                    <img src="https://via.placeholder.com/300x150/F1F1F1/000000/?text=LOGO" />
+                </div>
+            </div> <!--  /logo-grid -->
+        </section> <!-- END LOGOS -->
+
+
+        <!-- ARTICLES -->
+        <div class="container border-t border-red-500 mb-32 bg-gray-100">
+            <div class="inner-container flex flex-col sm:flex-row">
+
+                <!-- First article -->
+                <div class="first-article-border sm:w-1/2 px-20 py-16 lg:p-32 border-r-0 sm:border-r border-b sm:border-b-0 border-red-500">
+                    <a href="" class="article-hover flex flex-col">
+                        <span class="font-thin mb-5">Lorem</span>
+                        <span class="text-4xl md:text-5xl leading-none font-semibold mb-5 uppercase">
+                            Out of focus: Cashiers</span>
+                        <span class="font-thin font-medium mb-5">By John Cullen</span>
+                    </a>
+                </div>
+
+                <!-- Second article -->
+                <div class="second-article-border sm:w-1/2 px-20 py-16 lg:p-32">
+                    <a href="" class="article-hover flex flex-col">
+                        <span class="font-thin mb-5"></span>
+                        <span class="mb-5 text-4xl md:text-5xl leading-none font-semibold uppercase">
+                            Best Practices for Launching your Brand</span>
+                        <span class="font-thin font-medium mb-5">By Summer Teal Simpson Hitch</span>
+                    </a>
+                </div>
+            </div>
+        </div> <!-- /ARTICLES -->
+    </main> <!-- /MAIN CONTENT -->
+
+
+    <!-- FOOTER SPACER -->
+    <div class="spacer"></div>
+
+    <!-- FOOTER -->
+    <footer class="fixed w-full bottom-0 left-0 bg-red-500 text-white">
+        <div class="flex flex-col">
+
+            <!-- Footer Content Box -->
+            <div class="footer-content-box w-2/3">
+                <span class="small-heading">So What's Next?</span>
+                <h1 class="-mt-2 md:-mt-4 lg:-mt-8 text-4xl md:text-5xl lg:text-6xl font-bold uppercase">
+                    We're ready!<span class="text-2xl font-serif italic pl-2 underline lowercase">
+                        Let’s Chat.</span></h1>
+            </div>
+
+            <!-- Footer Company Info -->
+            <div class="flex flex-col md:flex-row md:justify-around pb-10">
+
+                <!-- Address -->
+                <ul class="footer-list md:mx-0 justify-around">
+                    <li>© 2019 Focus Lab, LLC</li>
+                    <li>912-228-5211</li>
+                    <li>35 Barnard St. #202 Savannah, GA 31401</li>
+                    <li>Contact Us</li>
+                </ul>
+
+                <!-- Social Links -->
+                <ul class="footer-list md:mx-0 justify-between">
+                    <li class="opacity-75 pr-2"><a href="#">Twitter</a></li>
+                    <li class="opacity-75 pr-2">/</li>
+                    <li class="opacity-75 pr-2"><a href="#">Instagram</a></li>
+                    <li class="opacity-75 pr-2">/</li>
+                    <li class="opacity-75 pr-2"><a href="#">Dribbble</a></li>
+                    <li class="opacity-75 pr-2">/</li>
+                    <li class="opacity-75 pr-0"><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </footer> <!-- /FOOTER -->
     <!-- SCRIPTS -->
     <script src="/js/app.js"></script>
-    <script async="" src="http://project-stack1.test:3000/browser-sync/browser-sync-client.js"></script>
+    <script async="" src="https://my-project.test:3000/browser-sync/browser-sync-client.js"></script>
 
 </body>
 </html>

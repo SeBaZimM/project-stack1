@@ -8,8 +8,12 @@ var gulp            = require("gulp");
 var sass            = require("gulp-sass");
 var postcssimport   = require('postcss-import');
 var postcss         = require("gulp-postcss");
-var tailwindcss     = require("tailwindcss");
 var purgecss        = require("gulp-purgecss");
+var csso            = require('gulp-csso');
+var rename          = require("gulp-rename");
+var terser          = require('gulp-terser');
+var replace         = require("gulp-replace");
+var tailwindcss     = require("tailwindcss");
 var browserSync     = require("browser-sync").create();
 
 
@@ -34,6 +38,7 @@ var path = {
             html: "./**/*.html"
         }  
     };
+
 
 // Reload
 // -------------------------------------------------------
@@ -60,7 +65,7 @@ function tailwind() {
             )
             .pipe(gulp.dest(path.styles.dest))
             .pipe(browserSync.stream({once: true}))
-    );
+    )
 }
 
 exports.tailwind = tailwind;
@@ -76,12 +81,11 @@ function style() {
             .pipe(sass())
             .on("error", sass.logError)
             .pipe(gulp.dest(path.styles.dest))
-            .pipe(browserSync.stream({once: true}))
-    );
+            .pipe(browserSync.stream({ once: true }))
+    )
 }
 
 exports.style = style;
-
 
 
 // PURGECSS
@@ -96,7 +100,60 @@ gulp.task('purgecss', () => {
         })
       )
       .pipe(gulp.dest(path.styles.dest))
-  })
+    }
+);
+
+
+// Build process for live production
+// -------------------------------------------------------
+
+gulp.task('build', () => {
+    return ( 
+        // Minify tailwind CSS
+        gulp
+            .src('./css/tailwind.css')
+            .pipe(csso())
+            .pipe(rename("./css/tailwind.min.css"))
+            .pipe(gulp.dest('./'))
+        ,
+
+        // Minify styles CSS
+        gulp
+            .src('./css/styles.css')
+            .pipe(csso())
+            .pipe(rename("./css/styles.min.css"))
+            .pipe(gulp.dest('./'))
+        ,
+
+        // Minify app JS
+        gulp
+            .src('./js/app.js')
+            .pipe(terser({ mangle: true, ecma: 6 }))
+            .pipe(rename("./js/app.min.js"))
+            .pipe(gulp.dest('./'))
+        ,
+
+        // Replace import CSS to min.css
+        gulp
+            .src('./css/app.css')
+            .pipe(replace('tailwind.css', 'tailwind.min.css'))
+            .pipe(replace('styles.css', 'styles.min.css'))
+            .pipe(gulp.dest('./css'))
+        ,
+
+        // Replace script src JS to app.min.js
+        gulp
+            .src('./*.html')
+            .pipe(replace('/js/app.js', '/js/app.min.js'))
+            .pipe(gulp.dest('./'))
+    )
+});
+
+
+
+// Replace the reference in app.css and *.html files
+// -------------------------------------------------------
+
 
 
 
@@ -108,10 +165,10 @@ function watch(){
     // Achtung: Browser Cache in Chrome sollte in Dev deaktiviert werden, damit CSS nicht aus dem Cache geladen wird
     // Möglichkeiten: Erweiterung Cache Killer bzw. gulp-cache (noch nichgt getestet) einbinden
     browserSync.init({
-        proxy: "https://project-stack1.test",
+        proxy: "https://my-project.test",
         https: {
-            key: "/Users/marco/.config/valet/Certificates/project-stack1.test.key", 
-            cert: "/Users/marco/.config/valet/Certificates/project-stack1.test.crt"
+            key: "/Users/sebastianzimmermann/.config/valet/Certificates/my-project.test.key", 
+            cert: "/Users/sebastianzimmermann/.config/valet/Certificates/my-project.test.crt"
         },
        browser: "chrome",
        notify: true,
