@@ -42,6 +42,8 @@
     @apply pl-12; } }
 
 /* Navigation Full */
+.navbar {
+  top: -1000px; }
 
 .full-nav-closed {
   top: -1000px;
