@@ -1,5 +1,4 @@
 # Project-Stack1
-v1-0
 **Starter Projekt für Tailwindcss**
 
 ## Software
