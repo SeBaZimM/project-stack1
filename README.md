@@ -70,7 +70,7 @@ Ansonsten beim klonen des Projekts mittels "git clone git@github.com:'github_acc
 
 ### 1.3. Enviroment Variablen Erstellen
 
-Wenn mehrere Entwickler am Projekt arbeiten, wird das mit der Zeit lästig immer die gulpfile.js (ö.ä) anzupassen. Hierbei hilft uns es sher einmalig für das Projekt eine .env Datei zu erstellen, die unstere Umgebungsvariablen, wie username bereitstellt.
+Wenn mehrere Entwickler am Projekt arbeiten, muss man immer die gulpfile.js (o.ä) für seine Umgebung anpassen. Hierbei hilft es sehr einmalig für das Projekt eine .env Datei zu erstellen, die die Umgebungsvariablen, wie username bereitstellt.
 
 /.env
 
@@ -120,20 +120,13 @@ oder beide auf einmal:
 
 ---
 
-## 1. PurgeCSS
+## 1. Build
 
-PurgeCSS entfernt überflüssige Klassen aus  "/css/tailwind.css" und reduziert dadurch extrem die Größe des CSS-Files. Diese Funktion sollte man ausführen, bevor die Seite live geht.
+Diese Funktion sollte man ausführen, bevor die Seite live geht.
 
     $ gulp purgecss
 
-## 2. Build
-
-Der build Process ist dafür, bevor die Seite live geht. 
-**Vorher PurgeCss ausführen ! ! !**
-
-    $ gulp build
-
-Dieser Prozess besteht aus mehreren Prozesse.
+**Dieser Prozess besteht aus mehreren Prozesse.**
 
 - Compile CSS Prozess
   - tailwind.css
@@ -163,8 +156,6 @@ Nach der Minimierung wird eine **tailwind.min.css**, **styles.min.css**, **app.m
   
 Die imports von **app.css** wird ersetzt und verweist auf die **tailwind.min.css**, **styles.min.css** die in *_dest_* Ordner gespeichert werden.
 Alle verweise auf Javascript Dateien werden ebenfalls in den einzelnen HTML Datein durch **/js/app.min.js** ersetzt und in *_dest* Ordner gespeichert
-
----
 
 /app.css
 
