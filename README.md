@@ -133,7 +133,19 @@ Der build Process ist dafür, bevor die Seite live geht.
 
     $ gulp build
 
-Dieser Prozess besteht aus mehreren Funktionen.
+Dieser Prozess besteht aus mehreren Prozesse.
+
+- Compile CSS Prozess
+  - tailwind.css
+  - styles.css
+
+Beim Start des Build-Prozess werden nochmals die CSS kompaliert, um auch alle änderungen von CSS zu übernehmen,
+
+- Purge CSS Prozess
+  - tailwind.css
+  - styles.css
+
+Purge entfernt überflüssige Klassen aus **tailwind.css** **styles.css**  und reduziert dadurch extrem die Größe der CSS-Files.
 
 - Minify Prozess
   - CSS
@@ -143,12 +155,14 @@ Dieser Prozess besteht aus mehreren Funktionen.
     - app.js
   - entfernen von allen Kommentare.
 
-Nach der Minimierung wird eine **tailwind.min.css**, **styles.min.css**, **app.min.js**  erstellt.
+Nach der Minimierung wird eine **tailwind.min.css**, **styles.min.css**, **app.min.js** in *_dest_* Ordner gespeichert.
 
 - Replace Prozess
   - app.css
+  - *.html
   
-Die imports von **app.css** wird ersetzt und verweist auf die **tailwind.min.css**, **styles.min.css**
+Die imports von **app.css** wird ersetzt und verweist auf die **tailwind.min.css**, **styles.min.css** die in *_dest_* Ordner gespeichert werden.
+Alle verweise auf Javascript Dateien werden ebenfalls in den einzelnen HTML Datein durch **/js/app.min.js** ersetzt und in *_dest* Ordner gespeichert
 
 ---
 
