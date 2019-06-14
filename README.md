@@ -21,9 +21,9 @@
 - [Live Produktion](#live-produktion)
   - [1. Build](#1-build)
 
-## Software
-
 ---
+
+## Software
 
 ### Tools
 
@@ -52,9 +52,9 @@
 - Lightgallery (Full featured javascript lightbox gallery, No dependencies.)
 [https://sachinchoolur.github.io/lightgallery.js/](https://sachinchoolur.github.io/lightgallery.js/)
 
-# Installation
-
 ---
+
+# Installation
 
 ## 0. Gulp-CLI
 
