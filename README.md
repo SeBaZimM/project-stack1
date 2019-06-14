@@ -4,9 +4,22 @@
 ---
 
 # Inhaltsverzeichniss
-* [Software](#Software)
-* [Installation](#Installation)
-* [Live Produktion](#Live-Produktion)
+- [Project-Stack1](#project-stack1)
+- [Inhaltsverzeichniss](#inhaltsverzeichniss)
+  - [Software](#software)
+    - [Tools](#tools)
+    - [Vanilla JS-Plugins](#vanilla-js-plugins)
+- [Installation](#installation)
+  - [0. Gulp-CLI](#0-gulp-cli)
+  - [1. Installation Gulp-Projekt](#1-installation-gulp-projekt)
+    - [1.1. Projekt Name anpassen](#11-projekt-name-anpassen)
+    - [1.2. Projekt mit TLS schützen (https)](#12-projekt-mit-tls-sch%C3%BCtzen-https)
+    - [1.3. Enviroment Variablen erstellen](#13-enviroment-variablen-erstellen)
+    - [1.4. index.html anpassen](#14-indexhtml-anpassen)
+    - [1.5. Überwachung starten](#15-%C3%BCberwachung-starten)
+    - [Hinweis](#hinweis)
+- [Live Produktion](#live-produktion)
+  - [1. Build](#1-build)
 
 ## Software
 
@@ -77,7 +90,7 @@ Ansonsten beim klonen des Projekts mittels "git clone git@github.com:'github_acc
     $ cd my-project/
     $ valet secure
 
-### 1.3. Enviroment Variablen Erstellen
+### 1.3. Enviroment Variablen erstellen
 
 Wenn mehrere Entwickler am Projekt arbeiten, muss man immer die gulpfile.js (o.ä) für seine Umgebung anpassen. Hierbei hilft es sehr einmalig für das Projekt eine .env Datei zu erstellen, die die Umgebungsvariablen, wie username bereitstellt.
 
@@ -104,7 +117,7 @@ Im Projekt-Root-Verzeichnis die Überwachung mit "$ gulp watch" starten:
 
 ---
 
-#### Hinweis
+### Hinweis
 
 Beim erstenmal Aufrufen der Seite im Browser ist kein CSS import vorhanden. 
 
@@ -118,7 +131,7 @@ Erst bei einer Änderung in der tailwind-custom.css oder styles.css werden die b
     |- styles.css
     |- tailwind.css
 
-##### Alternativ kann man die auch mit Gulp erstellen lassen:
+**Alternativ kann man die auch mit Gulp erstellen lassen:**
 
     $ gulp tailwind
     $ gulp style
