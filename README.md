@@ -28,20 +28,20 @@
 ### Tools
 
 - Gulp (Software, basierend auf Node.js, um verschiedene Aufgaben im Webentwicklungsprozess zu automatisieren)
-[https://gulpjs.com/](https://gulpjs.com/)
+**[https://gulpjs.com/](https://gulpjs.com/)**
 - Gulp-Pakete: 
-  * gulp 
-  * gulp-sass
-  * postcss-import
-  * gulp-postcss
-  * gulp-purgecss
-  * gulp-csso
-  * gulp-rename
-  * gulp-terser
-  * gulp-replace
-  * tailwindcss
-  * browser-sync
-  * dotenv
+  * [gulp](https://www.npmjs.com/package/gulp)
+  * [gulp-sass](https://www.npmjs.com/package/gulp-sass)
+  * [postcss-import](https://www.npmjs.com/package/postcss-import)
+  * [gulp-postcss](https://www.npmjs.com/package/gulp-postcss)
+  * [gulp-purgecss](https://www.npmjs.com/package/gulp-purgecss)
+  * [gulp-csso](https://www.npmjs.com/package/gulp-csso)
+  * [gulp-rename](https://www.npmjs.com/package/gulp-rename)
+  * [gulp-terser](https://www.npmjs.com/package/gulp-terser)
+  * [gulp-replace](https://www.npmjs.com/package/gulp-replace)
+  * [tailwindcss](https://www.npmjs.com/package/tailwind)
+  * [browser-sync](https://www.npmjs.com/package/browser-sync)
+  * [dotenv](https://www.npmjs.com/package/dotenv)
 - Tailwind (A utility-first CSS framework for rapidly building custom designs.)
 [https://tailwindcss.com/](https://tailwindcss.com/)
 
@@ -70,7 +70,7 @@ Um Gulp für ein Projekt nutzen zu könne, muss die Gulp-CLI einmalig global ins
 
 ## 1.  Installation Gulp-Projekt
 
-Bei der Einbindung einer **Gulp-Projektvorlage** (mit **package.json, gulpfile.js** und **ohne node_modules**) wird die Installation von allen benötigten Modulen einfach mit "npm install" ausgeführt. 
+Bei der Einbindung einer **Gulp-Projektvorlage** (mit **package.json, gulpfile.js** und **ohne node_modules**) wird die Installation von allen benötigten Modulen einfach mit "==npm install==" ausgeführt. 
 
  "Install-Befehl" ausführen.
 
@@ -81,10 +81,31 @@ Alle Pakete werden **in das Verzeichnis "node_modules"** installiert.
 ### 1.1.  Projekt Name anpassen
 
 Falls das Projekt spezifisch mit einem neuen Projekt Namen geklont wurde, braucht man den Projekt-Verzeichnis-Name nicht ändern.
-    "git clone git@github.com:'github_account'/repo.git 'my-project'"
+Beispiel:
 
-Ansonsten beim klonen des Projekts mittels "git clone git@github.com:'github_account'/repo.git" wird der Projekt-Verzeichnis-Namen dementsprechend angepasst. 
+    $ git clone git@github.com:github_account/repo.git my-project
 
+    Cloning into 'my-project'...
+    remote: Enumerating objects: XXX, done.
+    remote: Counting objects: 100% (XXX/XXX), done.
+    remote: Compressing objects: 100% (XXX/XXX), done.
+    remote: Total XXX (delta XX), reused XXX (delta XX), pack-reused 0
+    Receiving objects: 100% (XXX/XXX), XXX.XX KiB | XXX.00 KiB/s, done.
+    Resolving deltas: 100% (XX/XX), done.
+
+Ansonsten beim klonen des Projekts wird der Projekt-Verzeichnis-Namen dementsprechend angepasst.
+
+    $ git clone git@github.com:'github_account'/repo.git
+
+    Cloning into 'repo'...
+    remote: Enumerating objects: XXX, done.
+    remote: Counting objects: 100% (XXX/XXX), done.
+    remote: Compressing objects: 100% (XXX/XXX), done.
+    remote: Total XXX (delta XX), reused XXX (delta XX), pack-reused 0
+    Receiving objects: 100% (XXX/XXX), XXX.XX KiB | XXX.00 KiB/s, done.
+    Resolving deltas: 100% (XX/XX), done.
+
+    $ mv repo my-project
 
 ### 1.2. Projekt mit TLS schützen (https)
     $ cd my-project/
@@ -119,19 +140,19 @@ Im Projekt-Root-Verzeichnis die Überwachung mit "$ gulp watch" starten:
 
 ### Hinweis
 
-Beim erstenmal Aufrufen der Seite im Browser ist kein CSS import vorhanden. 
+Beim erstenmal Aufrufen der Seite im Browser ist kein ==CSS== kompaliert. 
 
     /css
     |- app.css
 
-Erst bei einer Änderung in der tailwind-custom.css oder styles.css werden die benötigten **/css/tailwind.css** und **/css/styles.css** erstellt.
+Erst bei einer ==Änderung== in der **tailwind-custom.css** oder **styles.css** werden die benötigten **/css/tailwind.css** und **/css/styles.css** erstellt.
 
     /css
     |- app.css
     |- styles.css
     |- tailwind.css
 
-**Alternativ kann man die auch mit Gulp erstellen lassen:**
+Alternativ kann man die auch mit **==Gulp==** erstellen lassen:
 
     $ gulp tailwind
     $ gulp style
@@ -139,6 +160,7 @@ Erst bei einer Änderung in der tailwind-custom.css oder styles.css werden die b
 oder beide auf einmal:
 
     $ gulp tailwind && gulp style
+
 
 # Live Produktion
 
