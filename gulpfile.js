@@ -38,7 +38,7 @@ var path = {
             twjs: "./tailwind.config.js",
             html: "./**/*.html"
         },
-        dest: "./_dest"
+        dest: "./_dist"
     };
 
 

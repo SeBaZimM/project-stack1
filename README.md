@@ -124,23 +124,23 @@ oder beide auf einmal:
 
 Diese Funktion sollte man ausführen, bevor die Seite live geht.
 
-    $ gulp purgecss
+    $ gulp build
 
 **Dieser Prozess besteht aus mehreren Prozesse.**
 
-- Compile CSS Prozess
+- Compile CSS Prozess (tailwind, style)
   - tailwind.css
   - styles.css
 
 Beim Start des Build-Prozess werden nochmals die CSS kompaliert, um auch alle änderungen von CSS zu übernehmen,
 
-- Purge CSS Prozess
+- Purge CSS Prozess (purge)
   - tailwind.css
   - styles.css
 
 Purge entfernt überflüssige Klassen aus **tailwind.css** **styles.css**  und reduziert dadurch extrem die Größe der CSS-Files.
 
-- Minify Prozess
+- Minify Prozess (mintailwind, minstyles, minjs)
   - CSS
     - tailwind.css
     - styles.css 
@@ -148,14 +148,16 @@ Purge entfernt überflüssige Klassen aus **tailwind.css** **styles.css**  und r
     - app.js
   - entfernen von allen Kommentare.
 
-Nach der Minimierung wird eine **tailwind.min.css**, **styles.min.css**, **app.min.js** in *_dest_* Ordner gespeichert.
+**mintailwind**, **minstyles**, **minjs** verkleinert den Programmcode ohne seine Funktion zu ändern. Dadurch werden
+Whitespaces, sofern nicht syntaktisch erforderlich, Kommentare entfernt.
+Nach der Minimierung wird eine **tailwind.min.css**, **styles.min.css**, **app.min.js** in *_dist* Ordner gespeichert.
 
 - Replace Prozess
   - app.css
   - *.html
   
-Die imports von **app.css** wird ersetzt und verweist auf die **tailwind.min.css**, **styles.min.css** die in *_dest_* Ordner gespeichert werden.
-Alle verweise auf Javascript Dateien werden ebenfalls in den einzelnen HTML Datein durch **/js/app.min.js** ersetzt und in *_dest* Ordner gespeichert
+Die imports von **app.css** werden ersetzt und verweisen auf die **tailwind.min.css**, **styles.min.css** die in *_dist* Ordner gespeichert werden.
+Alle verweise von Javascript Dateien werden ebenfalls in den einzelnen HTML Datein durch **/js/app.min.js** ersetzt und in *_dist* Ordner gespeichert
 
 /app.css
 

@@ -65,7 +65,7 @@ node_modules/
 
 
 # Live build folder
-_dest/
+_dist/
 
 # Ignore all final CSS files
 css/*.css 
