@@ -1,11 +1,12 @@
 # Project-Stack1
 **Starter Projekt für Tailwindcss**
 
+---
+
 # Inhaltsverzeichniss
 * [Software](#Software)
 * [Installation](#Installation)
 * [Live Produktion](#Live-Produktion)
-
 
 ## Software
 
@@ -51,6 +52,8 @@ Um Gulp für ein Projekt nutzen zu könne, muss die Gulp-CLI einmalig global ins
     
     # Install Gulp-CLI
     $ npm install --global gulp-cli
+
+---
 
 ## 1.  Installation Gulp-Projekt
 
@@ -98,6 +101,8 @@ Wenn das Projekt mit valet TSL geschützt wurde, dann das Protokoll demenspreche
 Im Projekt-Root-Verzeichnis die Überwachung mit "$ gulp watch" starten:
 
     $ gulp watch
+
+---
 
 #### Hinweis
 
