@@ -2,9 +2,9 @@
 **Starter Projekt für Tailwindcss**
 
 # Inhaltsverzeichniss
-[Software](#Software)
-[Installation](#Installation)
-[Live Produktion](#Live_Produktion)
+* [Software](#Software)
+* [Installation](#Installation)
+* [Live Produktion](#Live-Produktion)
 
 
 ## Software
